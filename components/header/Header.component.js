@@ -1,75 +1,8 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BiChevronLeft } from 'react-icons/bi';
-import tw from 'tailwind-styled-components';
-
-const Header = tw.header`
-h-[100px]
-sx:grid
-sx:grid-cols-3
-bg-indigo-500
-
-sm:bg-slate-900
-sm:flex
-sm:justify-around
-sm:items-center
-transition-all
-duration-300
-ease-in-out
-
-${props => props.opendMenu && "h-full sx:flex sx:justify-center sx:items-center sx:text-center"};
-${props => !props.opendMenu && "h-[100px]"};
-`
-const HeaderTitle = tw.h2`
-text-white
-text-xl
-flex
-justify-center
-my-auto
-${props => props.opendMenu && "hidden"};
-`
-const HeaderButtonHambuger = tw.button`
-text-white
-text-xl
-flex
-justify-center
-my-auto
-hover:cursor-pointer
-sm:hidden
-
-${props => props.opendMenu && "hidden"};
-`
-
-const HeaderButtonBack = tw.button`
-text-3xl
-text-white
-sm:hidden
-${props => props.opendMenu && "hidden"};
-`
-
-const HeaderNav = tw.nav`
-sx:hidden
-`;
-
-const HeaderNavUl = tw.ul`
-text-white
-text-xl
-flex
-gap-4
-`;
-
-const HeaderNavLi = tw.li`
-hover:cursor-point
-hover:underline
-cursor-pointer
-`;
-
-const Logo = tw.h1`
-text-white
-font-semibold
-text-2xl
-sx:hidden
-`
+import { Header, HeaderButtonBack, HeaderButtonHambuger, 
+  HeaderNav, HeaderNavLi, HeaderNavUl, HeaderTitle, Logo } from './Header.style';
 
 const HeaderComponent = () => {
   const [openMenu, setOpenMenu] = useState(false);
