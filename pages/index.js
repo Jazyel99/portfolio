@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import HeaderComponent from '../components/header/Header';
+import HeaderComponent from '../components/header/Header.component';
+import ProfileComponent from '../components/Profile/Profile.component';
 // import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 
@@ -15,6 +16,7 @@ const Home = () => {
 
       <main className="bg-slate-900 h-[100vh]">
         <HeaderComponent />
+        <ProfileComponent />
       </main>
     </div>
   )
