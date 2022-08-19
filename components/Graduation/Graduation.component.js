@@ -16,7 +16,7 @@ const GraduationComponent = () => {
         <Image
           src="/asserts/graduation_graphic.png"
           width={2930}
-          height={3460}vvv
+          height={3460}
           objectFit="cover"
           alt="graduatio graphic"
         />
