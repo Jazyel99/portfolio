@@ -6,7 +6,7 @@ import { Header, HeaderButtonBack, HeaderButtonHambuger,
 import MenuComponent from './Menu.component';
 import { AppContext } from '../../context';
 
-const HeaderComponent = () => {
+const HeaderComponent = (props) => {
   const { openMenu, setOpenMenu } = useContext(AppContext);
 
   const onClickHambungerIcon = () => {
@@ -19,7 +19,7 @@ const HeaderComponent = () => {
         { false &&  <BiChevronLeft />}
       </HeaderButtonBack>
       <HeaderTitle opendMenu={ openMenu }>
-        Home
+        {props.title}
       </HeaderTitle>
       <HeaderButtonHambuger opendMenu={ openMenu }>
         <GiHamburgerMenu
