@@ -15,8 +15,8 @@ const Home = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="bg-slate-900 h-[100vh]">
-        <HeaderComponent />
+      <main className="bg-slate-900 h-full w-full">
+        <HeaderComponent title="Home"/>
         <ProfileComponent />
         <GraduationComponent />
       </main>
