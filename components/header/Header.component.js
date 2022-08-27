@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BiChevronLeft } from 'react-icons/bi';
 import { Header, HeaderButtonBack, HeaderButtonHambuger, 
-  HeaderNav, HeaderNavLi, HeaderNavUl, HeaderTitle, Logo } from './Header.style';
+  HeaderNav, HeaderNavLi, HeaderNavUl, HeaderTitle } from './Header.style';
+import MenuComponent from './Menu.component';
+import { AppContext } from '../../context';
 
 const HeaderComponent = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const { openMenu, setOpenMenu } = useContext(AppContext);
 
   const onClickHambungerIcon = () => {
     setOpenMenu(!openMenu);
@@ -16,9 +18,6 @@ const HeaderComponent = () => {
       <HeaderButtonBack>
         { false &&  <BiChevronLeft />}
       </HeaderButtonBack>
-      <Logo>
-        Jaz
-      </Logo>
       <HeaderTitle opendMenu={ openMenu }>
         Home
       </HeaderTitle>
@@ -27,21 +26,7 @@ const HeaderComponent = () => {
           onClick={ onClickHambungerIcon }
         />
       </HeaderButtonHambuger>
-      { openMenu && <div>
-        <ul className={`text-white text-xl
-          transition
-          duration-300
-          ease-in-out
-          delay-300
-          opacity-0 ${openMenu ? 'opacity-100' : 'hidden'}`}>
-          <li className="hover:bg-slate-900 transition duration-300 ease-in-out">Home</li>
-          <li className="hover:bg-slate-900 transition duration-300 ease-in-out">Contacts</li>
-          <li className="hover:bg-slate-900 transition duration-300 ease-in-out">Projects</li>
-          <li className="hover:bg-slate-900 transition duration-300 ease-in-out">About me</li>
-          <li className="hover:bg-slate-900 transition duration-300 ease-in-out">Certificates</li>
-          <li className="hover:bg-orange-500 transition duration-300 ease-in-out" onClick={ () => setOpenMenu(!openMenu) }>Sair</li>
-        </ul>
-      </div>}
+      { openMenu && <MenuComponent openMenu={ openMenu }/>}
       <HeaderNav opendMenu={ openMenu }>
         <HeaderNavUl>
           <HeaderNavLi>Home</HeaderNavLi>
